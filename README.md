@@ -1,12 +1,37 @@
+# VFF Platform (Vote For Fact) Proposal
 
 ## 1. Executive Summary
 
-3F (Vote For Fact) is a decentralized fact-checking platform built on the Kaia blockchain. It aims to combat misinformation by leveraging collective intelligence, blockchain technology, and economic incentives. The platform introduces a unique dual-token system and a reputation-based voting mechanism to ensure accurate and reliable fact-checking.
+VFF (Vote For Fact) is a decentralized fact-checking platform built on the Kaia blockchain. It aims to combat misinformation by leveraging collective intelligence, blockchain technology, and economic incentives. The platform introduces a unique dual-token system and a reputation-based voting mechanism to ensure accurate and reliable fact-checking.
+
+## Table of Contents[內碼] 
+
+1. [Executive Summary](#1-executive-summary)
+2. [Product Overview](#2-product-overview)
+3. [Detailed Product Flow](#3-detailed-product-flow)
+- 3.1. [Content Discovery and Submission](#31-content-discovery-and-submission)
+- 3.2. [Voting Process](#32-voting-process)
+- 3.3. [Verification Process](#33-verification-process)
+- 3.4. [Result Determination and Reward Distribution](#34-result-determination-and-reward-distribution)
+- 3.5. [Reputation System](#35-reputation-system)
+- 3.6. [Oracle Integration](#36-oracle-integration)
+- 3.7. [Community Contribution](#37-community-contribution)
+4. [Economic Model](#4-economic-model)
+- 4.1. [Dual-Token System](#41-dual-token-system)
+- - 4.1.1. [TruthCoin (TC)](#411-truthcoin-tc)
+- - 4.1.2. [VerifyPoint (VP)](#412-verifypoint-vp)
+- 4.2. [Token Interaction](#42-token-interaction)
+- 4.3. [Economic Sustainability](#43-economic-sustainability)
+- 4.4. [Incentive Alignment](#44-incentive-alignment)
+5. [Use Cases](#5-use-cases)
+- 5.1. [Individual User: Maria, Student](#51-individual-user-maria-student)
+- 5.2. [News Organization: TruthSeeker News](#52-news-organization-truthseeker-news)
+
 
 
 ## 2. Product Overview
 
-3F consists of the following key components:
+VFF consists of the following key components:
 
 1. **Decentralized Fact-Checking System**: Allows users to submit and verify news articles or claims.
 2. **Dual-Token Economy**: Utilizes TruthCoin (TC) and VerifyPoint (VP) for different platform activities.
@@ -16,47 +41,22 @@
 
 ```mermaid
 graph TD
-    A[User discovers controversial content on SNS] -->|Uses 3F extension/app| B[Content submitted to 3F platform]
-    B --> C{Set verification conditions}
-    C -->|Time limit| D[Create smart contract for verification]
-    C -->|Minimum votes| D
-    D --> E[3F bot posts comment on original SNS post]
-    E --> F[Users stake 10 tokens to vote]
-    F --> G{Voting process}
-    G -->|True| H[Vote recorded]
-    G -->|False| H
-    G -->|Need expert review| I[Expert review triggered]
-    H --> J{Verification conditions met?}
-    J -->|No| G
-    J -->|Yes| K[AI-assisted verification]
-    I --> K
-    K --> L{Clear consensus?}
-    L -->|Yes| M[Final verdict determined]
-    L -->|No| N[Human expert review]
-    N --> M
-    M --> O[Smart contract executes result]
-    O --> P{Reward distribution}
-    P -->|Correct voters| Q[Return stake + additional reward]
-    P -->|Incorrect voters| R[Forfeit staked tokens]
-    Q --> S[Update user reputations]
-    R --> S
-    S --> T[Post result back to SNS]
-    
-    B --> U[Submitter receives initial VP reward]
-    M --> V{Content verified as needing clarification or false?}
-    V -->|Yes| W[Submitter receives additional reward]
-    P --> X[Submitter receives share of reward pool]
-    S --> Y[Update submitter's reputation and status]
-    
+    A[User finds controversial content] -->|Uses VFF| B[Content submitted to VFF]
+    B --> C[Set verification conditions]
+    C --> D[Users vote and stake tokens]
+    D --> E[AI-assisted verification]
+    E --> F{Clear consensus?}
+    F -->|Yes| G[Final verdict determined]
+    F -->|No| H[Expert review]
+    H --> G
+    G --> I[Reward distribution]
+    I --> J[Update user reputations]
+    J --> K[Post result to social media]
+
     style A fill:#f9f,stroke:#333,stroke-width:2px
-    style M fill:#bbf,stroke:#333,stroke-width:2px
-    style T fill:#bfb,stroke:#333,stroke-width:2px
-    style U fill:#ff9,stroke:#333,stroke-width:2px
-    style W fill:#ff9,stroke:#333,stroke-width:2px
-    style X fill:#ff9,stroke:#333,stroke-width:2px
-    style Y fill:#ff9,stroke:#333,stroke-width:2px
-    style Q fill:#90EE90,stroke:#333,stroke-width:2px
-    style R fill:#FFA07A,stroke:#333,stroke-width:2px
+    style G fill:#bbf,stroke:#333,stroke-width:2px
+    style K fill:#bfb,stroke:#333,stroke-width:2px
+    style I fill:#90EE90,stroke:#333,stroke-width:2px
 
 ```
 
@@ -66,28 +66,28 @@ graph TD
 ### 3.1 Content Discovery and Submission
 
 1. **Browser Extension and Mobile App**:
-   - Users install the 3F browser extension or mobile app.
+   - Users install the VFF browser extension or mobile app.
    - These tools integrate with major social media platforms (SNS) like Facebook, X, Thread, Instagram, etc.
 
 2. **Content Flagging**:
-   - When a user encounters a controversial news article or claim on SNS, they can easily flag it using the 3F extension/app.
+   - When a user encounters a controversial news article or claim on SNS, they can easily flag it using the VFF extension/app.
    - The user sets verification conditions (e.g., time limit, minimum number of votes) or opts for decentralized verification.
 
-3. **Content Submission to 3F Platform**:
-   - Flagged content is automatically submitted to the 3F platform.
+3. **Content Submission to VFF Platform**:
+   - Flagged content is automatically submitted to the VFF platform.
    - A smart contract is created to manage the verification process based on the set conditions.
 
 4. **SNS Interaction**:
-   - Upon submission, a 3F bot posts a comment on the original SNS post.
-   - The comment informs others that a fact-check has been initiated and invites them to participate on the 3F platform.
+   - Upon submission, a VFF bot posts a comment on the original SNS post.
+   - The comment informs others that a fact-check has been initiated and invites them to participate on the VFF platform.
 
 ### 3.2 Voting Process
 
 1. **Voter Participation**:
-   - Users can access the voting page through the SNS bot comment or directly on the 3F platform.
+   - Users can access the voting page through the SNS bot comment or directly on the VFF platform.
 
 2. **Staking Mechanism**:
-   - To vote, users must stake 10 3F tokens (fixed price per vote).
+   - To vote, users must stake 10 VFF tokens (fixed price per vote).
    - A token locking mechanism prevents users from transferring or selling staked tokens during the voting period.
 
 3. **Voting Options**:
@@ -135,7 +135,7 @@ graph TD
 ### 3.6 Oracle Integration
 
 1. **Cross-Platform Data Flow**:
-   - Kaia's Oracle services facilitate secure data exchange between SNS platforms and the 3F system.
+   - Kaia's Oracle services facilitate secure data exchange between SNS platforms and the VFF system.
 
 2. **Real-time Updates**:
    - Verification results are posted back to the original SNS content, providing real-time fact-checking information to the wider audience.
@@ -185,6 +185,45 @@ This detailed flow encompasses the entire process from content discovery on soci
 - TC can be converted to VP at any time (dynamic rate)
 - VP to TC conversion is restricted (minimum reputation required, conversion limits)
 
+```mermaid
+graph TD
+    A[User Activity] --> B{Activity Type}
+    B -->|Voting| C[Stake TC]
+    B -->|Content Submission| D[Earn VP]
+    B -->|Educational Tasks| E[Earn VP]
+
+    C --> F{Voting Outcome}
+    F -->|Correct| G[Return TC + Bonus]
+    F -->|Incorrect| H[Lose Staked TC]
+
+    G --> I[Option to Convert]
+    D --> I
+    E --> I
+
+    I -->|Convert| J[VP to TC Conversion]
+    I -->|Hold| K[Keep as VP]
+
+    H --> L[TC Added to Reward Pool]
+    G --> L
+
+    M[Platform Fees] --> L
+    
+    L --> N[Distribute Rewards]
+    N --> O[To Correct Voters]
+    N --> P[To Content Submitters]
+    N --> Q[To Verifiers/Experts]
+
+    R[TC Staking for Governance] --> S[Earn Passive Income]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#FFA07A,stroke:#333,stroke-width:2px
+    style D fill:#90EE90,stroke:#333,stroke-width:2px
+    style E fill:#90EE90,stroke:#333,stroke-width:2px
+    style L fill:#FFD700,stroke:#333,stroke-width:2px
+    style R fill:#FFA07A,stroke:#333,stroke-width:2px
+```
+
 ### 4.3 Economic Sustainability
 
 - TC has a 2% annual inflation rate for the first 5 years
@@ -203,8 +242,8 @@ This detailed flow encompasses the entire process from content discovery on soci
 
 Maria is a college student interested in current events but often unsure about the reliability of news she reads online.
 
-1. Maria signs up for 3F and completes the onboarding process, receiving a small amount of VP.
-2. She takes several media literacy courses on 3F, earning more VP and increasing her reputation.
+1. Maria signs up for VFF and completes the onboarding process, receiving a small amount of VP.
+2. She takes several media literacy courses on VFF, earning more VP and increasing her reputation.
 3. Maria starts participating in low-stakes fact-checking using her VP.
 4. As her accuracy and reputation grow, she earns more VP and converts some to TC.
 5. With her TC, Maria now participates in high-stakes fact-checking of major news stories.
@@ -216,13 +255,13 @@ Outcome: Maria becomes a more discerning news consumer, earns crypto while learn
 
 TruthSeeker News is a digital news outlet looking to increase reader trust and engagement.
 
-1. TruthSeeker integrates 3F's API into their website.
-2. They submit all their published articles to 3F for community fact-checking.
-3. Articles display a 3F verification badge, showing real-time community trust scores.
-4. TruthSeeker encourages readers to participate in 3F verification, increasing engagement.
-5. They use 3F analytics to identify trending topics and potential misinformation in their industry.
+1. TruthSeeker integrates VFF's API into their website.
+2. They submit all their published articles to VFF for community fact-checking.
+3. Articles display a VFF verification badge, showing real-time community trust scores.
+4. TruthSeeker encourages readers to participate in VFF verification, increasing engagement.
+5. They use VFF analytics to identify trending topics and potential misinformation in their industry.
 6. TruthSeeker's reputation for accuracy grows, attracting more readers and advertisers.
 
 Outcome: TruthSeeker News enhances its credibility, engages readers in the fact-checking process, and gains valuable insights into news trends and reader concerns.
 
-These use cases demonstrate how 3F can benefit both individual users and organizations, creating a more informed and engaged community while combating the spread of misinformation.
+These use cases demonstrate how VFF can benefit both individual users and organizations, creating a more informed and engaged community while combating the spread of misinformation.
