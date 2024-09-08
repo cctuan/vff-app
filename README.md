@@ -4,7 +4,7 @@
 
 VFF (Vote For Fact) is a decentralized fact-checking platform built on the Kaia blockchain. It aims to combat misinformation by leveraging collective intelligence, blockchain technology, and economic incentives. The platform introduces a unique dual-token system and a reputation-based voting mechanism to ensure accurate and reliable fact-checking.
 
-## Table of Contents[內碼] 
+## Table of Contents
 
 1. [Executive Summary](#1-executive-summary)
 2. [Product Overview](#2-product-overview)
